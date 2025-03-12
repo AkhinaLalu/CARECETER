@@ -1,0 +1,266 @@
+{% load static %}
+  
+    <div class="accordion accordion-secondary" id="accordionSecondaryExample">
+        <!-- Personal Info Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="about_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#about_collapseSecondaryOne" aria-expanded="true"
+                aria-controls="about_collapseSecondaryOne">
+            Personal Info
+            </button>
+            </h2>
+            <div id="about_collapseSecondaryOne" class="accordion-collapse collapse show"
+            aria-labelledby="about_headingSecondaryOne"
+            data-bs-parent="#accordionSecondaryExample">
+            <div class="accordion-body">
+                <div class="row gy-4">
+                    <div class="col-xl-2">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="col-xl-3">
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first-name" value= {{user_data.first_name}}>
+                    </div>
+                    <div class="col-xl-3">
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last-name" value= {{user_data.last_name}}>
+                    </div>
+                    <div class="col-xl-4">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" value= {{user_data.email}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="country-code" class="form-label">Country Code</label>
+                        <input type="tel" class="form-control" id="country-code" placeholder="+1100"  value= {{user_data.country_code}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="phone-number" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone-number" placeholder="Phone numner" value= {{user_data.phone_number}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="nationality" class="form-label">Nationality</label>
+                        <input type="text" class="form-control" id="nationality"  value= {{user_data.nationality}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" value= {{user_data.dob}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="gender" class="form-label">Gender</label>
+                        <input type="text" class="form-control" id="gender" value= {{user_data.gender}}>
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="doj" class="form-label">Date of Joining</label>
+                        <input type="date" class="form-control" id="doj" value= "">
+                    </div>
+                    <div class="col-xl-3">
+                        <label class="form-label d-block">Job Applying For</label>
+                        <select class="form-control" name="job-apply" id="job-apply">
+                        <option value="">Select Job</option>
+                        <option value="Choice 1" {% if user_data.job_applied == "Choice 1" %} selected {% endif %}>Choice 1</option>
+                        <option value="Choice 2" {% if user_data.job_applied == "Choice 2" %} selected {% endif %}>Choice 2</option>
+                        <option value="Choice 3" {% if user_data.job_applied == "Choice 3" %} selected {% endif %}>Choice 3</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3">
+                        <label for="employee-id" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" id="employee-id">
+                    </div>
+                    <div class="col-xl-2">
+                        <label for="driving-licence" class="form-label">Valid Driving Licence?</label>
+                        <input type="text" class="form-control" id="driving-licence">
+                    </div>
+                    <div class="col-xl-4">
+                        <label for="referral" class="form-label">How did you hear about us?</label>
+                        <input type="text" class="form-control" id="referral">
+                    </div>
+                    <div class="col-xl-4">
+                        <label for="work-limit" class="form-label">Right to work - Limit</label>
+                        <select class="form-control" name="work-limit" id="work-limit" multiple>
+                        <option value="Choice 1" selected>Choice 1</option>
+                        <option value="Choice 2">Choice 2</option>
+                        </select>
+                    </div>
+                    <!-- Required Documents Section -->
+                    <div class="col-xl-8">
+                        <div class="card custom-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Required Documents
+                            </div>
+                            These are extra documents. Please click the button to upload.
+                        </div>
+                        <div class="card-body">
+                            <input type="file" class="multiple-filepond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Address Deatils Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="about_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#about_collapseSecondaryOne" aria-expanded="true"
+                aria-controls="about_collapseSecondaryOne">
+            Address Details
+            </button>
+            </h2>
+            <div id="about_collapseSecondaryOne" class="accordion-collapse collapse show"
+            aria-labelledby="about_headingSecondaryOne" data-bs-parent="#accordionSecondaryExample">
+            <div class="accordion-body">
+                <div class="row gy-3">
+                    <!-- House Number -->
+                    <div class="col-md-6 col-lg-4 col-xl-2">
+                        <label for="house-number" class="form-label">House Number</label>
+                        <input type="text" class="form-control" id="house-number" required>
+                    </div>
+                    <!-- Address 1 -->
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <label for="address-1" class="form-label">Address 1</label>
+                        <input type="text" class="form-control" id="address-1">
+                    </div>
+                    <!-- Street Name -->
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <label for="street-name" class="form-label">Street Name</label>
+                        <input type="text" class="form-control" id="street-name">
+                    </div>
+                    <!-- Town/City -->
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                        <label for="town" class="form-label">Town/City</label>
+                        <input type="text" class="form-control" id="town" required>
+                    </div>
+                    <!-- Country 1 -->
+                    <div class="col-md-6 col-lg-3 col-xl-2">
+                        <label for="country1" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country1">
+                    </div>
+                    <!-- Country 2 (Tel Input) -->
+                    <div class="col-md-6 col-lg-3 col-xl-2">
+                        <label for="country2" class="form-label">Country</label>
+                        <input type="tel" class="form-control" id="country2">
+                    </div>
+                    <!-- Address Duration Section -->
+                    <div class="col-xl-12 mt-4">
+                        {% comment %} 
+                        <h5 class="fw-bold text-primary border-bottom pb-2 d-inline-block" style="color: rgb(79, 86, 98) !important;">
+                        <i class="bi bi-house-door-fill me-2" style="color: rgb(79, 86, 98);"></i> 
+                        How long has the candidate lived at this address?
+                        </h5>
+                        {% endcomment %}
+                        <p style="font-weight:600;font-size: 1rem; color:black;"> 
+                        <i class="bi bi-house-door-fill me-2" style="color:black;"></i> 
+                        How long has the candidate lived at this address?
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-2">
+                        <label for="fromdate" class="form-label">From Date</label>
+                        <input type="date" class="form-control" id="fromdate">
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-2">
+                        <label for="todate" class="form-label">To Date</label>
+                        <input type="date" class="form-control" id="todate">
+                    </div>
+                    <!-- Buttons Section -->
+                    <div class="col-12 mt-4">
+                        <button class="btn btn-primary me-2">Update</button>
+                        <button class="btn btn-danger me-2">Remove</button>
+                        <button class="btn btn-warning text-dark">Not Audited : Click to mark as audited</button>
+                    </div>
+                    <!-- New Row for the Toggle Switch -->
+                    <div class="row mt-3">
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex align-items-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="mark-current-address">
+                            <label class="form-check-label ms-2" for="mark-current-address" style="color:black !important;">Mark As Current Address</label>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Required Documents Section -->
+                    <div class="col-12">
+                        <div class="card custom-card mt-4">
+                        <div class="card-header">
+                            <h6 class="card-title mb-1">Proof of Address</h6>
+                            <p class="small text-muted">These are extra documents. Click the button to upload.</p>
+                        </div>
+                        <div class="card-body">
+                            <input type="file" class="multiple-filepond" name="filepond" multiple
+                                data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of row -->
+            </div>
+            </div>
+        </div>
+        <!-- Photo for ID Badge -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="about_headingSecondaryThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#about_collapseSecondaryThree" aria-expanded="true"
+                aria-controls="about_collapseSecondaryThree">
+            Photo for ID Badge
+            </button>
+            </h2>
+            <div id="about_collapseSecondaryThree" class="accordion-collapse collapse show"
+            aria-labelledby="about_headingSecondaryThree"
+            data-bs-parent="#accordionSecondaryExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <!-- File Upload Section (Left Column) -->
+                    <div class="col-md-6">
+                        <div class="card custom-card">
+                        <div class="card-header">
+                            <div class="card-title">ID Badge</div>
+                            Candidate's ID badge photo. Face should be visible, against a light background.
+                        </div>
+                        <div class="card-body">
+                            <input type="file" id="fileInput" class="multiple-filepond" name="filepond" accept="image/*" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6">
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Image Preview Section (Right Column) -->
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                        <img id="imagePreview" src="{% static 'admin_template/assets/image/pc1.jpg' %}" alt="ID Badge Photo"
+                            class="img-thumbnail" style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- ID Upload Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="about_headingSecondaryFour">
+            <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#about_collapseSecondaryFour"
+                aria-expanded="false" aria-controls="about_collapseSecondaryFour">
+            ID Upload
+            </button>
+            </h2>
+            <div id="about_collapseSecondaryFour" class="accordion-collapse collapse show"
+            aria-labelledby="about_headingSecondaryFour"
+            data-bs-parent="#accordionSecondaryExample">
+            <div class="accordion-body">
+                <div class="col-xl-8">
+                    <div class="card custom-card">
+                        <div class="card-header">
+                        <div class="card-title">ID Proof Upload</div>
+                        Upload ID proof (Passport/Driving License).
+                        </div>
+                        <div class="card-body">
+                        <input type="file" class="multiple-filepond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        <!-- End accordion -->

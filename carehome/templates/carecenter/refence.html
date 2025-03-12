@@ -1,0 +1,147 @@
+<style>
+</style>
+<div class="accordion accordion-secondary" id="accordionReferenceExample">
+    <!-- Add Reference Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="reference_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#reference_collapseSecondaryOne" aria-expanded="true"
+                aria-controls="reference_collapseSecondaryOne">
+            Add Reference
+            </button>
+        </h2>
+        <div id="reference_collapseSecondaryOne" class="accordion-collapse collapse show"
+            aria-labelledby="reference_headingSecondaryOne" data-bs-parent="#accordionReferenceExample">
+            <div class="accordion-body">
+                <div class="row gy-4">
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
+                        <label for="reference-type" class="form-label">Reference Type</label>
+                        <input type="text" class="form-control" id="reference-type">
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <label for="referee-name" class="form-label">Full name of the referee</label>
+                        <input type="text" class="form-control" id="referee-name">
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <label for="referee-contact" class="form-label">Contact number of the referee</label>
+                        <input type="text" class="form-control" id="referee-contact">
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                        <label for="referee-email" class="form-label">Email Id of the referee</label>
+                        <input type="text" class="form-control" id="referee-email" placeholder="Enter email">
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="full_ban" name="full_ban" checked>
+                            <label class="form-check-label" for="full_ban">Can we request reference from this contact now?</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <br>
+                        <input type="submit" class="btn btn-primary" name="submit" value="Save Reference">
+                    </div>
+                </div>
+                <br>
+                <!-- Framework Ready Reference Multi -->
+                <div class="col-xl-12">
+                    <div class="card custom-card">
+                        <div class="card-header justify-content-between">
+                            <div class="card-title">
+                                <u>Framework Ready Reference Multi</u>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-4">
+                                <div class="col-xl-2">
+                                    <label for="framework-reference-type" class="form-label">Reference Type</label>
+                                    <input type="text" class="form-control" id="framework-reference-type">
+                                </div>
+                                <div class="col-xl-3">
+                                    <label for="framework-referee-name" class="form-label">Full name of the referee</label>
+                                    <input type="text" class="form-control" id="framework-referee-name">
+                                </div>
+                                <div class="col-xl-3">
+                                    <label for="framework-referee-contact" class="form-label">Contact number of the referee</label>
+                                    <input type="text" class="form-control" id="framework-referee-contact">
+                                </div>
+                                <div class="col-xl-4">
+                                    <label for="framework-referee-email" class="form-label">Email Id of the referee</label>
+                                    <input type="text" class="form-control" id="framework-referee-email" placeholder="Enter email">
+                                </div>
+                                <div class="col-xl-6">
+                                    <label class="form-label">Ref. email sent on</label>
+                                    <?= date('d/m/Y h:i:s A') ?>
+                                </div>
+                                <div class="col-xl-6">
+                                    <label class="form-label">Ref. viewed on</label>
+                                    <?= date('d/m/Y h:i:s A') ?>
+                                </div>
+                                <div class="col-xl-6">
+                                    <label class="form-label">Ref. completed on</label>
+                                    <?= date('d/m/Y h:i:s A') ?>
+                                </div>
+                                <div class="col-xl-6">
+                                    <label class="form-label">Request reference from this contact now:</label> Yes
+                                </div>
+                                <div class="col-xl-12">
+                                    <label class="form-label">Send Link</label><br>
+                                    Instead of the candidate, you can also collect the reference. To do so, please send the reference request by clicking the Send Email button.
+                                </div>
+                                <div class="col-xl-2">
+                                    <br>
+                                    <button type="button" class="btn btn-primary">
+                                    Send Email <i class="ri-mail-line"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xl-2">
+                                    <br>
+                                    <button type="button" class="btn btn-danger">
+                                    Remove
+                                    </button>
+                                </div>
+                                <div class="col-xl-4">
+                                    <br>
+                                    <button type="button" class="btn btn-warning">
+                                    Not Audited: Click to mark as audited
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Framework Ready Reference Multi -->
+            </div>
+        </div>
+    </div>
+    <!-- Reference Status Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="reference_headingSecondaryTwo">
+            <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#reference_collapseSecondaryTwo"
+                aria-expanded="false" aria-controls="reference_collapseSecondaryTwo">
+            Reference Status
+            </button>
+        </h2>
+        <div id="reference_collapseSecondaryTwo" class="accordion-collapse collapse show"
+            aria-labelledby="reference_headingSecondaryTwo" data-bs-parent="#accordionReferenceExample">
+            <div class="accordion-body">
+                <div class="container mt-4">
+                    <div class="card p-4 shadow-sm">
+                        <h5 class="fw-bold">
+                            CANDIDATE REFERENCES 
+                            <span class="badge bg-danger text-white fw-normal">FRAMEWORK READY REFERENCE MULTI</span>
+                        </h5>
+                        <p class="text-muted mt-2">
+                            Here you can see the status of all the references. When the system receives references, they will appear here. 
+                            If the status is still <span class="fw-semibold">'Awaiting'</span>, please resend the reference request from the previous section.
+                        </p>
+                        <p class="fw-semibold mt-3">Current Reference Status</p>
+                    </div>
+                </div>
+                <!-- Bootstrap Badges & Styles -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End accordion -->

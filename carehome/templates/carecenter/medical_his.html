@@ -1,0 +1,302 @@
+<div class="accordion accordion-secondary" id="accordionMedicalExample">
+    <!-- Immunisation Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="medical_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#medical_collapseSecondaryOne" aria-expanded="true" aria-controls="medical_collapseSecondaryOne">
+            Immunisation
+            </button>
+        </h2>
+        <div id="medical_collapseSecondaryOne" class="accordion-collapse collapse show" aria-labelledby="medical_headingSecondaryOne" data-bs-parent="#accordionMedicalExample">
+            <div class="accordion-body">
+                <!-- Content for Immunisation -->
+                <div class="card p-4 shadow-sm border rounded mb-4">
+                    <h4 class="fw-bold text-primary">IMMUNISATION</h4>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Select the vaccinations received:</label>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="tetanus" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="tetanus">Tetanus</label>
+                                <div class="mt-2 d-none" id="tetanus_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="polio" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="polio">Polio</label>
+                                <div class="mt-2 d-none" id="polio_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="diptheria" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="diptheria">Diphtheria</label>
+                                <div class="mt-2 d-none" id="diptheria_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="mmr" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="mmr">Measles, Mumps, and Rubella (MMR)</label>
+                                <div class="mt-2 d-none" id="mmr_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="bcg" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="bcg">Bacillus Calmette-Guérin (BCG)</label>
+                                <div class="mt-2 d-none" id="bcg_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="hepB" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="hepB">Hepatitis B</label>
+                                <div class="mt-2 d-none" id="hepB_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="varicella" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="varicella">Varicella (Chickenpox)</label>
+                                <div class="mt-2 d-none" id="varicella">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="AnInvacc" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="AnInvacc">Annual Influenza Vaccine</label>
+                                <div class="mt-2 d-none" id="AnInvacc">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="firstdose" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="first dose">Covid Vaccination first dose</label>
+                                <div class="mt-2 d-none" id="firstdose">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="seconddose" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="second dose">Covid Vaccination second dose</label>
+                                <div class="mt-2 d-none" id="seconddose">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="covidbooster" onchange="toggleDateInput(this)">
+                                <label class="form-check-label" for="covidbooster">Covid Vaccination [Booster Dose]</label>
+                                <div class="mt-2 d-none" id="covidbooster_date">
+                                    <label class="form-label">Date Given</label>
+                                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-primary px-4">Save</button>
+                        <button class="btn btn-warning px-4">Not Audited : Click to mark as audited</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Medical Questionnaire Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="medical_headingSecondaryTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#medical_collapseSecondaryTwo" aria-expanded="false" aria-controls="medical_collapseSecondaryTwo">
+            Medical Questionnaire
+            </button>
+        </h2>
+        <div id="medical_collapseSecondaryTwo" class="accordion-collapse collapse" aria-labelledby="medical_headingSecondaryTwo" data-bs-parent="#accordionMedicalExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <!-- Content for Medical Questionnaire -->
+                    <div class="card p-4 shadow-sm border rounded">
+                        <h4 class="fw-bold text-primary">MEDICAL QUESTIONNAIRE</h4>
+                        <p class="text-muted">The following questions are asked to candidates</p>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">1) Please state whether the candidate has ever suffered from or had any symptoms of the following complaints:</label>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input toggle-input" type="checkbox" id="accident">
+                                    <label class="form-check-label" for="accident">Any accident, Physical defect, Disc or back trouble, Hernia?</label>
+                                    <input class="form-control mt-2 d-none w-50" type="text" id="accident_details" placeholder="More details">
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input toggle-input" type="checkbox" id="illness">
+                                    <label class="form-check-label" for="illness">Any illness or condition not already mentioned?</label>
+                                    <input class="form-control mt-2 d-none w-50" type="text" id="illness_details" placeholder="More details">
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input toggle-input" type="checkbox" id="infection">
+                                    <label class="form-check-label" for="infection">Any infection of the liver, Prostate, Kidneys, Urinary system, Reproductive system?</label>
+                                    <input class="form-control mt-2 d-none w-50" type="text" id="infection_details" placeholder="More details">
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input toggle-input" type="checkbox" id="heart">
+                                    <label class="form-check-label" for="heart">Blood Pressure, Palpitations, Shortness of Breath, Chest Pains, Infection of the Heart?</label>
+                                    <input class="form-control mt-2 d-none w-50" type="text" id="heart_details" placeholder="More details">
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input toggle-input" type="checkbox" id="respiratory">
+                                    <label class="form-check-label" for="respiratory">Bronchitis, Asthma, Persistent Cough, TB, Pleurisy, Infection of the lungs or Throat?</label>
+                                    <input class="form-control mt-2 d-none w-50" type="text" id="respiratory_details" placeholder="More details">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">2) Do you or have you suffered from dermatitis, Skin allergies, Other skin diseases (eczema, psoriasis, etc.)?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skin" id="skin_yes">
+                                    <label class="form-check-label" for="skin_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skin" id="skin_no">
+                                    <label class="form-check-label" for="skin_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">3) Are you currently receiving any medical treatment or taking any medication?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="medication" id="medication_yes">
+                                    <label class="form-check-label" for="medication_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="medication" id="medication_no">
+                                    <label class="form-check-label" for="medication_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">4) Have you ever been refused employment because of your health?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">5) Have you ever had a surgical operation?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data" class="form-label">Any other medical investigations ?</label>
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">6) Are you fit to do night work or do you believe that any of these are made worse by night work ?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data" class="form-label">if yes, please give details ?</label>
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">7)Are you allergic to any drugs?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data" class="form-label">Specific substances?</label>
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">8) Have you ever sustained an industrial injury?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data" class="form-label">If yes, please give details</label>
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">9) Have you ever claimed against your employer?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_yes">
+                                    <label class="form-check-label" for="employment_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="employment" id="employment_no">
+                                    <label class="form-check-label" for="employment_no">No</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data" class="form-label">If yes, please give details</label>
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold w-50">
+                            10) Approximately how many days absences have you had from work, school or university for health reasons during the last 5 years?  No. of days and Please give details of periods of absence due to sickness of five days or more.
+                            </label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control w-50" id="">                                                                            
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-primary px-4">Save</button>
+                            <button class="btn btn-warning px-4">Not Audited : Click to mark as audited</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

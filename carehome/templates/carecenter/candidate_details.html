@@ -1,0 +1,330 @@
+
+{% extends 'carecenter/sidebar.html'%}
+{% load static %}
+{% block content %}
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
+<style>
+
+    .modal-content {
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .modal-header {
+        background-color: #f5f5f5;
+        border-bottom: none;
+    }
+    .modal-body {
+        padding: 20px;
+    }
+    .profile-image {
+        width: 100px;               
+        height: 100px;              
+        border-radius: 50%;      
+        object-fit: cover;          
+        background-color: #fff;    
+        padding: 4px; 
+        border: 3px solid rgb(53, 149, 246);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+    
+</style>
+
+<style>
+    .select-class{
+        background: #00a006 !important; 
+        cursor: pointer; 
+    }
+    .onoffswitchs-inner:before {
+    content: "Yes";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitchs-inner:after {
+    content: "No";
+    padding-right: 10px;
+    background-color: #beaeae;
+    color: #999999;
+    text-align: right;
+}
+.onoffswitchs {
+    position: relative;
+    width: 117px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.onoffswitch-switchs {
+    display: block;
+    width: 18px;
+    margin: 4px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 83px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitchs-inner:before, .onoffswitchs-inner:after {
+    display: block;
+    float: left;
+    width: 49%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.focusedRow{
+    background-color: #cce5ff !important;
+           color:#e21515 !important;
+}
+.form-group {
+    margin-bottom: 10px!important;
+}
+ .ui-autocomplete {
+        max-height: 200px; /* Set the maximum height for the dropdown */
+        overflow: scroll; /* Add a scrollbar when the list exceeds the maximum height */
+    }
+/*input:focus {*/
+            border: 3px solid #ec1d1d!important; /* Green border */
+            outline: none; /* Remove default outline */
+/*        }*/
+/*        select:focus {*/
+            border: 3px solid #ec1d1d!important; /* Green border */
+            outline: none; /* Remove default outline */
+/*        }*/
+/*        .select2-container--default .select2-selection--single:focus {*/
+            border: 3px solid #ec1d1d!important; /* Green border */
+            outline: none; /* Remove default outline */
+/*        }*/
+
+</style>
+<link rel="stylesheet" href="{% static 'admin_template/assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css' %}">
+
+<!-- intl-tel-input css -->
+<link rel="stylesheet" href="{% static 'admin_template/assets/libs/intl-tel-input/build/css/intlTelInput.min.css' %}">
+
+<!-- Tagify CSS -->
+<link rel="stylesheet" href="{% static 'admin_template/assets/libs/@yaireo/tagify/tagify.css' %}">
+
+<!-- Dragsort CSS -->
+<link rel="stylesheet" href="{% static 'admin_template/assets/libs/@yaireo/dragsort/dragsort.css' %}">
+
+<!-- Dual ListBox CSS -->
+<link rel="stylesheet" href="{% static 'admin_template/assets/libs/dual-listbox/dual-listbox.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+ <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<style>
+thead {
+    // background-color: #77b1d4!important;
+    // color: #fff;
+}
+</style>
+
+ <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+  <!-- Start:: row-11 -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Recruitment
+                                </div>
+                               
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="datatable-basic" class="table table-bordered text-nowrap w-100">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Actions</th>
+                                                <th scope="col">Contact</th>
+                                                <th scope="col">Application Stage</th>
+                                                <th scope="col">Progress</th>
+                                                <th scope="col">Days In</th>
+                                                <th scope="col">Post Code</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for detail in details %}
+                                            <tr>
+                                                
+                                                <td>
+                                                    <a href="{% url 'pro-details-page' detail.id %}">
+                                                        <div class="d-flex align-items-center" value={{detail.id}}>
+                                                        <span class="avatar avatar-xs me-2 online avatar-rounded" >
+                                                            <img src="{{ detail.image.url }}" alt="User Image" width="150">
+                                                        </span>{{detail.first_name}} {{detail.last_name}}
+                                                    </div></br><p>Health Care Assistant</p><p>Student Visa</p>
+  													</a>
+                                                </td>
+                                                <td><div class="hstack gap-2 fs-15">
+                                                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                        <i class="ri-message-2-line"></i>
+                                                    </a>  														<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-success"><i class="ri-send-plane-2-line"></i></a>
+  														<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-warning"><i class="ri-mail-check-fill"></i></a>
+  														<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-danger"><i class="ri-delete-bin-2-fill"></i></a>
+  														<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-teal"><i class="ri-map-pin-line"></i></a>
+                                                    </div>
+                                                </td>
+
+                                                    <!-- Modal Structure -->
+                                                <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="d-flex align-items-center mb-3">
+                                                                <img src="{{ detail.image.url }}" alt="User Image" class="profile-image">
+                                                                <div class="ms-3">
+                                                                    <h5 style="font-size: 30px; font-weight:600;">{{detail.first_name}} {{detail.last_name}}</h5>
+                                                                    <p>Health Care Assistant</p>
+                                                                </div>
+                                                            </div>           
+                                                            <!-- Horizontal Line for Separation -->
+                                                            <hr class="my-3">                                                 
+                                                        
+                                                            <div class="mb-3 contact-info" >
+                                                                <p>
+                                                                    <i class="ri-mail-line icon-style"></i>
+                                                                    {{detail.email}}
+                                                                    <a href="mailto:{{detail.email}}" class="btn btn-sm btn-success ms-2">Send mail</a>
+                                                                </p>
+                                                                <p>
+                                                                    <i class="ri-map-pin-line icon-style"></i>
+                                                                    {{detail.address}}
+                                                                    <i class="ri-pencil-line ms-1"></i>
+                                                                </p>
+                                                                <p>
+                                                                    <i class="ri-phone-line icon-style"></i>
+                                                                    {{detail.phone_number}}
+                                                                </p>
+                                                            </div>
+                                                
+                                                        <hr>
+                                                
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                            <p><strong>Stage:</strong> New applicant</p>
+                                                            <p><strong>Gender:</strong> Female</p>
+                                                            <p><strong>DOB:</strong> 05/08/1991</p>
+                                                            <p><strong>Nationality:</strong> Indian</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                            <p><strong>Emp ID:</strong> 00002628</p>
+                                                            <p><strong>DOJ:</strong> 04/03/2025 17:09</p>
+                                                            <p><strong>Visa Type:</strong> Biometric Card</p>
+                                                            </div>
+                                                        </div>
+                                                
+                                                        <div class="mt-3">
+                                                            <textarea class="form-control" placeholder="Enter your comments"></textarea>
+                                                            <button class="btn btn-success mt-2">Submit</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <td><i class="ri-mail-line"></i>{{detail.email}}<br><i class="ri-phone-line"></i> {{detail.phone_number}}</td>
+                                                <td>
+                                                    <select class="form-select select-class" >
+                                                        <option value="New application">New application</option>
+                                                        <option value="Intro call done">Intro call done</option>
+                                                        <option value="Application in progress">Application in progress</option>
+                                                        <option value="Vetting in progress">Vetting in progress</option>
+                                                        <option value="Awaiting reference">Awaiting reference</option>
+                                                        <option value="Interview booked">Interview booked</option>
+                                                        <option value="Interview done">Interview done</option>
+                                                        <option value="Training to be completed">Training to be completed</option>
+                                                        <option value="Training completed">Training completed</option>
+                                                        <option value="Incomplete Documents">Incomplete Documents</option>
+                                                        <option value="DBS to be completed">DBS to be completed</option>
+                                                        <option value="No experience">No experience</option>
+                                                        <option value="Not interested">Not interested</option>
+                                                    </select>
+                                                </td>  
+                                                <td>
+                                                    <div class="progress mb-3" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                         <div class="progress-bar bg-success" style="width: 40%;">40%</div>
+                                                     </div>
+                                                 </td>
+                                                 <td>
+                                                    0
+                                                 </td>
+                                                 <td>CB4 2AB <i class="ri-pencil-line"></i></td>                                      
+                                            </tr>
+                                            {% endfor %}
+                                           
+                                        </tbody>
+
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer d-none border-top-0">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-11 -->
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+<!-- END OF PAGE HEAD      -->
+
+ <!-- modal user details  -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const profileModal = new bootstrap.Modal(document.getElementById('profileModal'));
+    document.querySelector('.btn-success').addEventListener('click', () => {
+        profileModal.show();
+    });
+});
+</script>
+
+<!-- Load jQuery first -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Then load jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Internal Datatables JS -->
+    <script src="{% static 'admin_template/assets/js/datatables.js' %}"></script>
+{% endblock %}
+
+

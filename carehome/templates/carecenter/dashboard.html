@@ -1,0 +1,178 @@
+
+<?php $path=base_url(); 
+$cdate=date('d/m/Y');
+$todate=isset($_POST['todate']) && $_POST['todate'] ? $_POST['todate'] : $cdate;
+$fromdate=isset($_POST['fromdate']) && $_POST['fromdate'] ? $_POST['fromdate'] : $cdate;
+?>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in" >
+                <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+              </ul>
+               
+<?php
+ $privilage=$this->uroll->check_privilages('master','Dashboard','view');
+  if($privilage)
+        {
+   $menu_count=count($dashboard_menu);
+   // print_r($menu_count);
+   $i=0;
+?>
+       <?php 
+
+               echo form_open('master/Dashboard/index',' id="frm" ');
+               ?>                              <!-- text input -->
+   <div class="col-md-12">
+     <div class="col-md-2">
+   <div class="form-group">
+      <label>From Date</label>
+     <input type="text" class="form-control datepicker" id="datepickerDate" name="fromdate" value="<?=date('d/m/Y')?>" style="margin-top: 3px;height: 30px">
+   </div></div>
+     <div class="col-md-2">
+   <div class="form-group">
+      <label>To Date</label>
+        <input type="text" class="form-control datepicker" id="datepickerDate1" name="todate" value="<?=date('d/m/Y')?>" style="margin-top: 3px;">
+     </div>
+   </div>
+   <div class="col-md-1">
+     <!-- text input -->
+     <div class="form-group">
+         <button type="button" class="btn btn-primary" style="margin-top: 25px;" onclick="getDashboardDetails()">Show</button>
+     </div>
+   </div><br>
+ </div>
+  <section class="panel" >
+
+        <div class="row m-l-none m-r-none bg-light lter">
+          <?php
+          while ($i<3)
+          {
+              if(isset($dashboard_menu[$i]))
+              {
+                  echo $dashboard_menu[$i];
+              } else {
+                  break;
+              }
+              $i++;
+          }
+          ?>
+          <div class="col-sm-6 col-md-3  b-r b-light" style="display: none;">
+            
+ 
+                              
+         
+              
+          </div>
+        </div>
+  </section>
+<section class="panel " >
+      <div class="row m-l-none m-r-none bg-light lter">
+          <?php
+           while($i<$menu_count)
+           {
+               echo $dashboard_menu[$i];
+               $i++;
+           }
+          ?>
+        </div>
+      </section>
+               
+   <?=  form_close()?>
+  <section class="panel panel-default">
+                      
+                    <header class="panel-heading font-bold" style="background-color: #a0aeb7;">Cash Flow</header>
+                    <div class="panel-body">
+                      <div class="table-responsive" style="width:100%;overflow:scroll;" id="table_amount">
+                         
+                     </div>
+                    </div>
+
+  </section>
+       <div class="col-md-4" style="float:right;padding-right: initial;display: none;">
+                    
+                  <section class="panel panel-default">
+                      
+                    <header class="panel-heading font-bold" style="background-color: #a0aeb7;">Active Users</header>
+                    <div class="panel-body">
+                      <div class="table-responsive" style="width:100%;overflow:scroll;" id="table">
+                         
+                     </div>
+                    </div>
+
+                  </section>
+                      
+       </div>
+<?php
+
+        }
+?>
+
+
+    <div id="chartContainer" style="height:300px; width: 50%;" class="col-md-4"></div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+   
+      $(document).ready(function(){
+   
+   $("#datepickerDate").datepicker({
+        format: 'dd/mm/yyyy'
+      });
+
+      $('#datepickerDate1').datepicker({
+           format: 'dd/mm/yyyy'
+         });
+          getDashboardDetails();
+    setInterval(getDashboardDetails, 60000);
+      });
+      function getDashboardDetails()
+      {
+          var fromdate=$('#datepickerDate').val();
+          // alert(fromdate);
+          var todate=$('#datepickerDate1').val();
+         $.ajax({
+             url:"<?=base_url('index.php/Dashboard/get_dashboard_details')?>",
+             dataType:'json',
+             type:'post',
+             data:{fromdate:fromdate,todate:todate},
+             success:function(response){
+              // alert(response);
+                 $('#total_patient').html(response.total_patient);
+               $('#total_doctors').html(response.total_doctors);
+               $('#total_staff').html(response.total_staff);
+                 $('#new_patient').html(response.new_patient);
+                 $('#new_revisit').html(response.new_revisit);
+                 $('#total_op_bills').html(response.total_op_bills);
+                 $('#billed_amount').html(response.billed_amount);
+                 $('#cash_pay').html(response.cash_pay);
+                 $('#card_pay').html(response.card_pay);
+                 $('#credit_pay').html(response.credit_pay);
+                 $('#room_available').html(response.room_available);
+                 $('#room_cleaning').html(response.room_cleaning);
+                 $('#admission').html(response.admission);
+                 $('#discharged').html(response.discharged);
+                 $('#ip_bills').html(response.ip_bills);
+                 $('#ip_bill_amount').html(response.ip_bill_amount);
+                 $('#ip_cash_pay').html(response.ip_cash_pay);
+                 $('#ip_card_pay').html(response.ip_card_pay);
+                 $('#expired_products').html(response.expired_products);
+                 $('#expired_products_six').html(response.expired_products_six);
+                 $('#sales_bill').html(response.sales_bill);
+                 $('#sales_amount').html(response.sales_amount);
+                 $('#sales_credit_amount').html(response.sales_credit_amount);
+                 $('#payable').html(response.payable);
+                 $('#no_credit').html(response.no_credit);
+                 $('#lab_bill').html(response.lab_bill);
+                 $('#lab_amount').html(response.lab_amount);
+                 $('#lab_credit_amount').html(response.lab_credit_amount);
+                 $('#lab_no_credit').html(response.lab_no_credit);
+             	 $('#ip_patient').html(response.ip_patient);
+             	 $('#result_pending').html(response.result_pending);
+             	 $('#counter_bill_amount').html(response.counter_bill_amount);
+             	 $('#counter_bill_count').html(response.counter_bill_count);
+                 $('#table').html(response.table);
+                 $('#table_amount').html(response.table_amount);
+                 // chart(response.collection,response.billedamount,response.todaypend);
+             }
+         });
+      }
+</script>

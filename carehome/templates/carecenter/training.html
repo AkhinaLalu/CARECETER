@@ -1,0 +1,323 @@
+<div class="accordion accordion-secondary" id="accordionTrainingExample">
+    <!-- Certificates Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="training_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#training_collapseSecondaryOne" aria-expanded="true" aria-controls="training_collapseSecondaryOne">
+            Certificates
+            </button>
+        </h2>
+        <div id="training_collapseSecondaryOne" class="accordion-collapse collapse show" aria-labelledby="training_headingSecondaryOne" data-bs-parent="#accordionTrainingExample">
+            <div class="accordion-body">
+                <div class="container mt-4">
+                    <div class="card p-4 shadow-sm">
+                        <h5 class="fw-bold">TRAINING CERTIFICATES</h5>
+                        <p class="text-muted">
+                            The following training list can be customized and changed from 
+                            <b>Settings > Staff Settings > Define mandatory training.</b>
+                        </p>
+                        <!-- Toggle for Physically Audited -->
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="physicallyAudited">
+                            <label class="form-check-label fw-semibold" for="physicallyAudited">
+                            Physically Audited and No Document Uploaded
+                            </label>
+                        </div>
+                        <!-- Further Training Question -->
+                        <p class="fw-semibold">Do you require further training (online or in person)?</p>
+                        <div class="d-flex gap-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="trainingYes" checked>
+                                <label class="form-check-label fw-semibold" for="trainingYes">Yes</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="trainingNo">
+                                <label class="form-check-label fw-semibold" for="trainingNo">No</label>
+                            </div>
+                        </div>
+                        <!-- Certificate Type Selection -->
+                        <p class="mt-3 fw-semibold">
+                            Please choose the following options for 
+                            (1) Single certificate covering multiple trainings or 
+                            (2) Individual training certificates.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="singleCertificate">
+                                <label class="form-check-label fw-semibold" for="singleCertificate">Single Certificate</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="individualCertificate" checked>
+                                <label class="form-check-label fw-semibold" for="individualCertificate">Individual Training Certificate</label>
+                            </div>
+                        </div>
+                        <!-- Upload Section -->
+                        <p class="mt-4 fw-semibold">
+                            Upload Certificates 
+                            <span class="text-muted">(JPG, PNG, or PDF files allowed)</span>
+                        </p>
+                        <div class="row g-3">
+                            <!-- List of Training Document Upload Fields -->
+                            <script>
+                                const trainingDocs = [
+                                    "DEMENTIA CARE",
+                                    "HEALTH AND SAFETY AWARENESS",
+                                    "CARE PLANNING",
+                                    "CORONAVIRUS AWARENESS AND INFECTION CONTROL",
+                                    "COSHH AWARENESS",
+                                    "FIRE SAFETY",
+                                    "INFECTION PREVENTION AND CONTROL ADVANCED",
+                                    "MENTAL CAPACITY ACT AND DEPRIVATION LIBERTIES AWARENESS",
+                                    "MOVING AND HANDLING OF PEOPLE AWARENESS",
+                                    "SAFEGUARDING OF ADULTS LEVEL 3 CSTF ALIGNED"
+                                ];
+                                
+                                document.write(trainingDocs.map((doc, index) => `
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 text-center">
+                                            <p class="fw-semibold mb-2">Training Docs: ${doc}</p>
+                                            <label for="upload${index}" class="btn btn-primary">
+                                                <i class="bi bi-upload"></i> Upload
+                                            </label>
+                                            <input type="file" id="upload${index}" class="d-none" accept=".jpg, .png, .pdf">
+                                        </div>
+                                    </div>
+                                `).join(''));
+                            </script>
+                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="card p-4 shadow-sm">
+                            <h5 class="fw-bold">REQUIRED DOCUMENTS</h5>
+                            <p class="text-muted">
+                                These are extra documents (that may not be included in any of the above sections). 
+                                You can customise this from 
+                                <b>Settings > Staff Settings > Define Required Documents.</b>
+                            </p>
+                            <p>Please click the following buttons to select a file from your device.</p>
+                            <div class="row g-3">
+                                <!-- List of Required Documents -->
+                                <script>
+                                    const requiredDocs = [
+                                        "DYSPHAGIA CARE",
+                                        "EQUALITY, DIVERSITY AND HUMAN RIGHTS",
+                                        "FOOD SAFETY",
+                                        "SALT (SPEECH AND LANGUAGE THERAPY)"
+                                    ];
+                                    
+                                    document.write(requiredDocs.map((doc, index) => `
+                                        <div class="col-md-6">
+                                            <div class="border rounded p-3 d-flex flex-column align-items-center text-center shadow-sm">
+                                                <p class="fw-semibold mb-2">${doc}</p>
+                                                <div class="d-flex gap-2">
+                                                    <label for="uploadReq${index}" class="btn btn-primary">
+                                                        Upload
+                                                    </label>
+                                                    <i class="bi bi-upload fs-5 text-primary"></i>
+                                                </div>
+                                                <input type="file" id="uploadReq${index}" class="d-none" accept=".jpg, .png, .pdf">
+                                            </div>
+                                        </div>
+                                    `).join(''));
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bootstrap Icons -->
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+                </div>
+                <!-- Bootstrap Icons -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+                <!-- Bootstrap Icons -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+            </div>
+        </div>
+    </div>
+    <!-- Work History Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="training_headingSecondaryTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#training_collapseSecondaryTwo" aria-expanded="false" aria-controls="training_collapseSecondaryTwo">
+            Work History
+            </button>
+        </h2>
+        <div id="training_collapseSecondaryTwo" class="accordion-collapse collapse show" aria-labelledby="training_headingSecondaryTwo" data-bs-parent="#accordionTrainingExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="container mt-4">
+                            <div class="card p-4 shadow-sm">
+                                <h5 class="fw-bold">WORK HISTORY</h5>
+                                <p class="text-muted">
+                                    The candidate is requested to provide a full history of employment from leaving school <b>without gaps</b>. 
+                                    If there are any <b>break(s)</b>, these should be included along with the <b>reason(s)</b> for the break(s).
+                                </p>
+                                <p class="fw-semibold">Any temporary and agency work experience should be included.</p>
+                                <div class="d-flex gap-3 flex-wrap mt-3">
+                                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2" 
+                                        data-bs-toggle="modal" data-bs-target="#addExperienceModal">
+                                    <i class="bi bi-plus-lg"></i> Add Work History
+                                    </button>
+                                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2"
+                                        data-bs-toggle="modal" data-bs-target="#addUnemploymentModal">
+                                    <i class="bi bi-plus-lg"></i> Add Unemployment Period
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Experience Modal -->
+                        <div class="modal fade" id="addExperienceModal" tabindex="-1" aria-labelledby="addExperienceModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addExperienceModalLabel">Add Experience</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label">Name of Employer <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Position with the employer <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Experience</label>
+                                                <textarea class="form-control" rows="3" placeholder="Please type your responsibilities in no more than 50 words."></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Reason for leaving</label>
+                                                <textarea class="form-control" rows="3" placeholder="Please type your reason for leaving in no more than 50 words."></textarea>
+                                            </div>
+                                            <div class="d-flex gap-3">
+                                                <div class="mb-3 flex-grow-1">
+                                                    <label class="form-label">Start Date <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="mm/yyyy" required>
+                                                </div>
+                                                <div class="mb-3 flex-grow-1">
+                                                    <label class="form-label">End Date</label>
+                                                    <input type="text" class="form-control" placeholder="mm/yyyy">
+                                                </div>
+                                            </div>
+                                            <div class="text-end">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Unemployment Period Modal -->
+                        <div class="modal fade" id="addUnemploymentModal" tabindex="-1" aria-labelledby="addUnemploymentModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addUnemploymentModalLabel">Add Unemployment Period</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label">Reason</label>
+                                                <textarea class="form-control" rows="3" placeholder="Please type your reason in no more than 50 words. Do not copy and paste. Wild characters are not allowed."></textarea>
+                                            </div>
+                                            <div class="d-flex gap-3">
+                                                <div class="mb-3 flex-grow-1">
+                                                    <label class="form-label">Start Date <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="mm/yyyy" required>
+                                                </div>
+                                                <div class="mb-3 flex-grow-1">
+                                                    <label class="form-label">End Date</label>
+                                                    <input type="text" class="form-control" placeholder="mm/yyyy">
+                                                </div>
+                                            </div>
+                                            <p class="text-muted text-center">(Leave blank if you still)</p>
+                                            <div class="text-end">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bootstrap Icons & Styles -->                                                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="training_headingSecondaryThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#training_collapseSecondaryThree" aria-expanded="false" aria-controls="training_collapseSecondaryThree">
+            Skills
+            </button>
+        </h2>
+        <div id="training_collapseSecondaryThree" class="accordion-collapse collapse show" aria-labelledby="training_headingSecondaryThree" data-bs-parent="#accordionTrainingExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_1" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_1">Able to follow instructions & procedures</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_2" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_2">Able to work in a team but use own initiative</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_3" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_3">Care and kind</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_4" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_4">Cheerful and friendly</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_5" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_5">Communication skills, including listening</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_6" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_6">Observational skills</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_7" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_7">Organizing skills</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_8" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_8">Willing to be hands-on with patients</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="skill_9" name="skills[]" checked>
+                            <label class="form-check-label" for="skill_9">Willing to do personal care tasks</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 flex-wrap mt-2">
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-warning">Not Audited: Click to mark as audited</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-vertical-style="overlay" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+    <head>
+        <!-- Meta Data -->
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> CARECIRCLE </title>
+        <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+        <meta name="Author" content="Spruko Technologies Private Limited">
+        <meta name="keywords" content="dashboard template,dashboard html,bootstrap admin,dashboard admin,admin template,sales dashboard,crypto dashboard,projects dashboard,html template,html,html css,admin dashboard template,html css bootstrap,dashboard html css,pos system,bootstrap dashboard">
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'admin_template/assets/images/brand-logos/favicon.ico' %}" type="image/x-icon">
+        <!-- Main Theme Js -->
+        <script src="{% static 'admin_template/assets/js/authentication-main.js'%}"></script>
+        <!-- Bootstrap Css -->
+        <link id="style" href="{% static 'admin_template/assets/libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+        <!-- Style Css -->
+        <link href="{% static 'admin_template/assets/css/styles.css' %}" rel="stylesheet" >
+        <!-- Icons Css -->
+        <link href="{% static 'admin_template/assets/css/icons.css' %}" rel="stylesheet" >
+    </head>
+    <script>
+        $(document).ready(function(){
+                      swal({
+              title: "Done!",
+              text: "<?=$this->session->flashdata("msg")?>",
+              imageUrl: "<?=  base_url()?>images/thumbs-up.png",
+              confirmButtonColor: "#1abc9c"
+              });
+            });
+    </script>
+    <body class="bg-white">
+        <div class="row authentication authentication-cover-main mx-0">
+            <div class="col-xxl-6 col-xl-7">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-xxl-6 col-xl-9 col-lg-6 col-md-6 col-sm-8 col-12">
+                        <div class="card custom-card my-5 auth-circle">
+                            <div class="card-body p-sm-5 p-4 m-1 m-sm-05">
+                                <img src="{% static 'admin_template/assets/image/circle.jpg' %}" alt="logo" class="desktop-logo" style="width: 133px;
+                                    ">
+                                <p class="h4 mb-2 fw-semibold">Admin Sign In</p>
+                                <p class="mb-4 text-muted fw-normal"></p>
+                                <div class="row gy-3">
+                                    <form action="{% url 'custom_admin_login' %}" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+
+                                    <div class="col-xl-12">
+                                        <input type="hidden" placeholder="Account Name" class="form-control " name="company_name" value="<?=$company_name?>" id="company_name" readonly>
+                                        <label for="signin-username" class="form-label text-default">User Name</label>
+                                        <input type="text" class="form-control" name="username" id="username" value="" placeholder="user name" required>
+                                    </div>
+                                    <div class="col-xl-12 mb-2">
+                                        <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end link-danger op-5 fw-medium fs-12">Forget password ?</a></label>
+                                        <div class="position-relative">
+                                            <input type="password"  placeholder="Password" class="form-control" name="password" id="signin-password" value=""  required>
+                                            <a href="javascript:void(0);" class="show-password-button text-muted" onclick="createpassword('signin-password',this)" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></a>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-5 captcha-box" id="captcha-display"  id="captImg" style="margin-top:10px">
+                                                <!-- Generated code will appear here -->
+                                            </div>
+
+                                            <div class="col-md-7"  style="margin-top:10px">
+                                                <a href="javascript:void(0);" class="btn btn-info refreshCaptcha"><i class="ri-refresh-line"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                
+                                                <label class="control-label">Enter the above text</label>
+                                                <input type="text" id="captcha" name="captcha" value="" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="remember">
+                                                <label class="form-check-label text-muted fw-normal fs-12" for="defaultCheck1">
+                                                Remember password ?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center my-4 authentication-barrier" style="display:none">
+                                    <span class="text-muted fs-11">Or Join With</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center gap-2 mb-3 flex-wrap" style="display:none">
+                                    <button class="btn btn-icon btn-orange-light" style="display:none">
+                                    <i class="ri-google-line fs-17 align-middle icon-custom"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-info-light" style="display:none">
+                                    <i class="ri-facebook-line fs-17 align-middle icon-custom"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pink-light" style="display:none">
+                                    <i class="ri-twitter-x-line fs-17 align-middle icon-custom"></i>
+                                    </button>
+                                </div>
+                                <div class="d-grid mt-4">
+                                    <button style="background-color: #0094eb;"  name="login" id="login" class="btn btn-lg btn-primary">Sign In</button>
+                                </div>
+                            </form>
+
+                                <div class="text-center" style="display:none">
+                                    <p class="text-muted mt-3 mb-0">Dont have an account? <a href="#" class="text-primary">Sign Up</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .authentication .authentication-cover {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                background: url("{% static 'admin_template/assets/image/care-home.avif' %}") no-repeat center center;
+                background-size: cover;
+                }
+                .bg-white {
+                background-color: var(--custom-white) !important;
+                }
+                .captcha-container {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    position: relative;
+                }
+                
+                .captcha-box {
+                    border: 1px solid #ddd;
+                    padding: 10px;
+                    border-radius: 0.25rem;
+                    background: url('https://www.transparenttextures.com/patterns/cartographer.png'); /* Background Image */
+                    background-size: cover;
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: 10px;
+                    width: 150px;
+                    text-align: center;
+                    user-select: none; /* Prevent text selection */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                
+                .refreshCaptcha {
+                    margin-left: 10px;
+                    border-radius: 0.25rem;
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    border: none;
+                    background-color: #007bff;
+                    color: #fff;
+                }
+                
+                .refreshCaptcha:hover {
+                    background-color: #0056b3;
+                }
+            </style>
+            <div class="col-xxl-6 col-xl-5 col-lg-12 d-xl-block d-none px-0">
+                <div class="authentication-cover overflow-hidden">
+                    <div class="authentication-cover-logo"> 
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center p-3 rounded m-5" style="display:none">
+                        <div class="p-3">
+                            <h2 class="text-fixed-white lh-base fw-semibold mt-4" style="display:none">Join the Revolution</h2>
+                            <p class="mb-0 fs-16 lh-base text-fixed-white op-8" style="display:none">Be part of something extraordinary. Sign up now and unlock a world of opportunities, new experiences, and exclusive benefits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{% static 'admin_template/assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Show Password JS -->
+        <script src="{% static 'admin_template/assets/js/show-password.js' %}"></script>
+        <script>
+            $(document).ready(function(){
+                $('.refreshCaptcha').on('click', function(){
+                    $.get('<?php echo base_url().'index.php/login/refresh'; ?>', function(data){
+                        $('#captImg').html(data);
+                    });
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $('#login').on('click', function(){
+            //alert("hai");
+            
+            var company_name = $('#company_name').val();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            //  alert(username);
+            if(company_name == ""){
+              swal("Warning!", "Please Enter the company Name...", "warning");
+              $('#company_name').focus();
+              return false;
+            }if(username == ""){
+              swal("Warning!", "Please Enter the User Name...", "warning");
+              $('#username').focus();
+              return false;
+            }if(password == ""){
+              swal("Warning!", "Please Enter the Password...", "warning");
+              $('#password').focus();
+              return false;
+            }
+            });
+        </script>
+        <script>
+            function generateCaptcha() {
+                let code = "";
+                let chars = "0123456789"; // Only numbers
+                for (let i = 0; i < 5; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                document.getElementById("captcha-display").textContent = code;
+            }
+            
+            // Generate captcha on page load
+            generateCaptcha();
+            
+            // Refresh captcha when the button is clicked
+            document.querySelector(".refreshCaptcha").addEventListener("click", generateCaptcha);
+        </script>
+    </body>
+</html>

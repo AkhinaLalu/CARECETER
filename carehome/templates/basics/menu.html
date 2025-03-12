@@ -1,0 +1,240 @@
+<?php $path=base_url();
+$page = $this->router->fetch_class();
+$url_segement = '#';
+if($this->uri->segment(4)!=''){$url_segement = $this->uri->segment(4);}
+ ?>
+ <style>
+a:hover {
+        color: black !important;
+    text-decoration: none;
+      background-color: #eee;
+    }
+.dropdown-submenu {
+    position: relative;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #eee;
+    border-color: #428bca;
+     color: black !important; 
+}
+</style>
+<?php
+$display="";
+if($this->db->query("select menu_hide from user_details where user_id=".$this->session->user_id)->row()->menu_hide==1){
+$display='display:none';
+}
+?>
+<nav class="navbar toggle" style="<?=$display?>">
+  <div class="container-fluid" style="margin-left:-17px;margin-right:-17px;width:100%;position:fixed;z-index:10;background-color:#387298;height: 62px">
+    <ul class="nav navbar-nav" style="margin-left:99px">
+      <?php
+            $user_roll=$this->session->user_roll;
+        $main_menus=explode(',',$user_roll['mainmenu_view']);
+        $prsub_menus=explode(',',$user_roll['submenu_view']);
+        $subsub_menu=explode(',',$user_roll['subsubmenu_view']);
+            // print_r($this->session->userdata()); exit;
+        if($this->session->type==0)
+        // if($this->session->reference_id==0)
+        {
+          $dashboards=$this->uroll->getPages();
+          $dashboard=$dashboards[0];
+          $dashboard_row=$dashboard['row'];
+          $dashboard_subrows=$dashboard['subrows'];
+          $dashboard_lastid=$dashboard['last_id'];
+          if(count($dashboards)>0)
+          {
+// print_r($dashboards);exit;
+            foreach($dashboards as $menuitems)
+            {
+              $menuitems_row=$menuitems['row'];
+              $menuitems_subrows=$menuitems['subrows']; 
+              if(!in_array($menuitems_row->menu_id,$main_menus))
+              continue;
+              $style="";
+              $menu_open="";
+              $active="";
+              $sub_menus = explode(',',$menuitems_row->name);
+          // print_r($sub_menus);
+          // exit;
+              if(in_array($page, $sub_menus) || in_array($url_segement, $sub_menus))
+              // if($page==$menuitems_row->links)
+              {
+                $style='style="background-color: #deedfc;box-shadow: 0 0 20px 0px black;"';
+                $menu_open='menu-open';
+                $active='active';
+              }
+              if($menuitems_row->submenuflag == 0)
+              {
+                $check=$this->uroll->checkUrlInMain($menuitems_row);
+                            if($check==false)
+                            {
+                            $check=$this->uroll->checkUrlInSub($menuitems_subrows);    
+                            }
+              ?>
+              <li class=" <?=($check)?'menu-open':''?>">
+                <a href="<?= base_url('index.php/'.$menuitems_row->class)?>" class=" <?=($check)?'active':''?>" style="color:white;text-align: center;font-size: 18px">
+                  <i class=" <?=$menuitems_row->icon;?>" ></i>
+                 <?php if($dashboard_lastid==$menuitems_row->menu_id){?>
+                  <p style="font-size:12px">
+                    <?=$menuitems_row->name;?>
+                   </p>
+                <?php }else{?>
+                   <p style="font-size:12px">
+                   <?=$menuitems_row->name;?> 
+                  </p>
+                <?php }?>
+                </a>                
+              </li>
+              <?php
+              }
+              else if($menuitems_row->submenuflag == 1)
+              { 
+             
+               $check=$this->uroll->checkUrlInMain($menuitems_row);
+                    if($check==false)
+                            {
+                            $check=$this->uroll->checkUrlInSub($menuitems_subrows);    
+                            }
+                            if($check==false)
+                            {
+                            $check=$this->uroll->checkUrlInSub($menuitems_subrows);    
+                            }
+                ?>
+                <li class=" dropdown <?=($check)?'menu-open':''?>">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle <?=($check)?'active':''?>" <?=$style?> style="color:white;text-align: center;font-size: 18px">
+                    <i class=" <?=$menuitems_row->icon;?>" ></i>
+                    <p style="font-size:12px">
+                      <?=$menuitems_row->name;?>
+                      <span class="caret"></span>
+                      <i class=""></i>                      
+                    </p>
+                  </a>
+                  <?php
+                  // print_r($menuitems_subrows);exit;
+                  if(count($menuitems_subrows)>0)
+                  { 
+                    ?>
+                    <ul class="dropdown-menu">
+                    <?php
+                    foreach($menuitems_subrows as $submenuitems)
+                    { 
+                      $submenuitems_row=$submenuitems['row'];
+                      $submenuitems_subrows=$submenuitems['subrows'];
+                      // print_r($submenuitems_subrows);exit;
+                      if(!in_array($submenuitems_row->submenu_id,$prsub_menus))
+                        continue;
+                      $sub_menu_active = '';
+                      $sub_menu_open = '';
+                      $sub_menu_two = explode(',',$submenuitems_row->class);
+                      if(in_array($page, $sub_menu_two) || in_array($url_segement, $sub_menu_two))                      
+                      {
+                        $sub_menu_active='active';
+                        $sub_menu_open='menu-open';
+                      }
+                      if($submenuitems_row->submenuflag_two ==0)
+                      {
+                      ?>
+                      <li   >
+                        <a href="<?= base_url('index.php/'.$submenuitems_row->module.'/'.$submenuitems_row->class)?>" class="dropdown-toggle submenu <?=$sub_menu_active?>">
+                          
+                          <p>  <i class="<?=$submenuitems_row->icon;?> nav-icon"></i>&nbsp;&nbsp;<?=$submenuitems_row->name;?></p>
+                        </a>
+                      </li>
+                      <?php
+                      }
+                      else
+                      {
+                        ?>
+                          <li class="dropdown-submenu <?=$sub_menu_open?>">
+                            <a href="#" class="dropdown-toggle submenu  <?=$sub_menu_active?>" data-toggle="dropdown">
+                              
+                              <p><i class="<?=$submenuitems_row->icon;?> nav-icon"></i>&nbsp;&nbsp;
+                               <?=$submenuitems_row->name;?>
+                                <i class="right fa fa-angle-double-right"></i>
+                              </p>
+                            </a>                        
+                            <?php
+                            if(count($submenuitems_subrows)>0)
+                            {
+                              ?>
+                                <ul class="dropdown-menu submenu" style="background-color:white">
+                                  <?php
+                                  
+                                  foreach($submenuitems_subrows as $submenu_items)
+                                  { 
+                                      if(!in_array($submenu_items->submenustwo_id,$subsub_menu))
+                                      continue;
+                                   $submenu_items_active='';
+                                    if($page==$submenu_items->sub_label || ($url_segement==$submenu_items->sub_label))
+                                    {
+                                      $submenu_items_active='active';
+                                    }
+                                  ?>
+                                    <li class="nav-item">
+                                      <a href="<?= base_url('index.php/'.$submenu_items->module.'/'.$submenu_items->class);?>" class="nav-link  <?=$submenu_items_active?>">
+<!--                                        <i class="fa fa-circle nav-icon"></i>-->
+                                        <p><?=$submenu_items->submenu_two;?></p>
+                                      </a>
+                                    </li>
+                                  <?php 
+                                  } ?>
+                                </ul>
+                            <?php 
+                            } 
+                     ?>
+                          </li> 
+                        <?php
+                      }
+                    } ?>
+                    </ul>
+                  <?php
+                  }
+                  ?>
+                </li>
+              <?php
+              }
+            }
+          }
+        } 
+        //else {
+            ?>
+    
+    
+      
+      
+    
+   
+  </ul>
+   
+   
+   <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user"> 
+      
+
+               <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <span class="thumb-sm avatar pull-left" style="background: white; font-color:white">
+            <img  src="<?php echo base_url();?>images/person-icon.png">
+          </span>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu animated fadeInRight">
+          <span class="arrow top"></span>
+        
+
+        <li><a href="<?php echo base_url('index.php');?>" >FAQ</a></li>
+         
+         
+          <li class="divider"></li>
+          <li>
+            <a href="<?php echo base_url('index.php/login/logout');?>" >Logout</a>
+          </li>
+        </ul>
+      </li>
+                 </ul>
+  </div>
+</nav>
+
+<script>
+
+</script>

@@ -1,0 +1,134 @@
+<div class="accordion accordion-secondary" id="accordionBackgroundExample">
+    <!-- DBS Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="background_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#background_collapseSecondaryOne" aria-expanded="true" aria-controls="background_collapseSecondaryOne">
+            DBS (PVG)
+            </button>
+        </h2>
+        <div id="background_collapseSecondaryOne" class="accordion-collapse collapse show" aria-labelledby="background_headingSecondaryOne" data-bs-parent="#accordionBackgroundExample">
+            <div class="accordion-body">
+                <!-- Content for DBS -->
+                <div class="card p-4 shadow-sm">
+                    <h5 class="fw-bold">DBS (PVG)</h5>
+                    <p class="text-muted">
+                        The candidate is requested to provide an Enhanced DBS (PVG) Certificate.
+                    </p>
+                    <!-- DBS Dropdown -->
+                    <div class="mb-3">
+                        <label class="fw-semibold">Does the candidate have a valid Enhanced DBS (PVG)?</label>
+                        <select class="form-select">
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-warning">Not Audited: Click to mark as audited</button>
+                    </div>
+                </div>
+                <!-- Required Documents -->
+                <div class="card p-4 shadow-sm mt-4">
+                    <h5 class="fw-bold">REQUIRED DOCUMENTS</h5>
+                    <p class="text-muted">
+                        These are extra documents (that may not be included in any of the above sections).
+                        You can customise this from <b>Settings > Staff Settings > Define Required Documents</b>.
+                    </p>
+                    <!-- File Upload -->
+                    <div class="mb-3">
+                        <label class="fw-semibold">DBS Update Check</label>
+                        <div class="border p-3 rounded text-center">
+                            <i class="bi bi-cloud-upload h2 text-primary"></i>
+                            <p class="small text-muted">Click upload to select a file from your device.</p>
+                            <button class="btn btn-outline-primary"><i class="bi bi-upload"></i> Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Right To Work Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="background_headingSecondaryTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#background_collapseSecondaryTwo" aria-expanded="true" aria-controls="background_collapseSecondaryTwo">
+            Right To Work
+            </button>
+        </h2>
+        <div id="background_collapseSecondaryTwo" class="accordion-collapse collapse show" aria-labelledby="background_headingSecondaryTwo" data-bs-parent="#accordionBackgroundExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <!-- Content for Right To Work -->
+                    <div class="card p-4 shadow-sm">
+                        <h5 class="fw-bold">RIGHT TO WORK</h5>
+                        <p class="text-muted">
+                            For all candidates with nationalities other than the UK, the system will ask to confirm their right to work (RTW) 
+                            in the UK by collecting the following details so you can perform your checks.
+                        </p>
+                        <!-- Right to Work Question -->
+                        <div class="mb-3">
+                            <label class="fw-semibold">Does the candidate have the Right to Work in UK? <span class="text-danger">*</span></label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rightToWork" id="rightYes">
+                                <label class="form-check-label" for="rightYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rightToWork" id="rightNo">
+                                <label class="form-check-label" for="rightNo">No</label>
+                            </div>
+                        </div>
+                        <!-- Visa Type -->
+                        <div class="mb-3">
+                            <label class="fw-semibold">Visa Type <span class="text-danger">*</span></label>
+                            <select class="form-select">
+                                <option selected>Select visa type</option>
+                            </select>
+                        </div>
+                        <!-- Passport & Expiry Date -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="fw-semibold">Passport/VISA/BRP Number <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="fw-semibold">Passport/VISA/BRP Expiry Date <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Share Code -->
+                        <div class="mb-3">
+                            <label class="fw-semibold">Share Code</label>
+                            <input type="text" class="form-control" value="0">
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-primary"><i class="bi bi-eye"></i> View Right to Work</button>
+                            <button class="btn btn-primary"><i class="bi bi-check-circle"></i> Prove Right to Work</button>
+                        </div>
+                        <hr>
+                        <!-- Upload File Section -->
+                        <h6 class="fw-semibold">Please upload a photo of the candidate's BRP Card/Visa.</h6>
+                        <div class="mb-3">
+                            <label class="fw-semibold">Upload File</label>
+                            <div class="border p-3 rounded text-center">
+                                <i class="bi bi-cloud-upload h2 text-primary"></i>
+                                <p class="small text-muted">Choose a file from your device.</p>
+                                <input type="file" class="form-control">
+                            </div>
+                        </div>
+                        <!-- Save & Audit Buttons -->
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2 flex-wrap mt-2">
+                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-warning">Not Audited: Click to mark as audited</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

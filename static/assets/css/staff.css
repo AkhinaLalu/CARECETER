@@ -1,0 +1,124 @@
+.display-3 {
+font-size: 3rem!important; 
+}
+
+.btn-primary {
+    color: #fff!important;
+    background-color: #e09d1d !important;
+    border-color: #e09d1d !important;
+    border-radius: 5px;
+}
+.btn-danger{
+    border-radius: 5px;
+}
+.form-floating>label {
+    padding: 9px!important;
+}
+.form-floating>.form-control, .form-floating>.form-select {
+    height: calc(2.7em + .75rem + 2px)!important;
+} 
+.form-control{
+    border-radius: 10px;
+}
+
+label
+{
+    color:#fff!important;
+}
+.login-area .input-field.col, .login-area .input-field {
+    background-color: #fff !important;
+} 
+.text-danger {
+    color: #e09d1d  !important;
+}
+
+/* .card{
+background-color: #f5e0ba40!important;
+                                } */
+.authentications-background {
+  position: none!important;
+  background-image: none!important;
+  background-size: none!important;
+  background-position: none!important;
+  background-repeat: none!important;
+background-color:#f8f9fa!important;
+}
+.form-label{
+color:#000!important;
+}
+label {
+    color: #000 !important;
+}
+body { background-color: white!important; };
+
+.cards.custom-card {
+    border-radius: 0.5rem;
+    background-color: var(--custom-white);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--default-border);
+    position: relative;
+    margin-block-end: 1.5rem;
+    width: 100%;
+}
+.cards {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-color: rgba(0, 0, 0, 0.125);
+    --bs-card-border-radius: var(--bs-border-radius);
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) -(var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+}
+.p-4 {
+    padding: 2.5rem !important;
+}
+
+#save
+{
+    background: #6173f4;
+    color: #fff;
+    border: none !important;
+    border: 2px solid transparent !important;
+}
+
+.captcha-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 0.25rem;
+    background: url(https://www.transparenttextures.com/patterns/cartographer.png) !important;
+    background-size: cover;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    width: 150px;
+    text-align: center;
+    user-select: none;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}

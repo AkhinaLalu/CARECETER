@@ -1,0 +1,573 @@
+<div class="accordion accordion-secondary" id="accordionOtherExample">
+    <!-- Next of Kin Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondaryOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondaryOne" aria-expanded="true" aria-controls="other_collapseSecondaryOne">
+            Next of Kin
+            </button>
+        </h2>
+        <div id="other_collapseSecondaryOne" class="accordion-collapse collapse show" aria-labelledby="other_headingSecondaryOne" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Next of Kin -->
+                <div class="card p-4 shadow-sm">
+                    <h5 class="fw-bold">NEXT OF KIN</h5>
+                    <div class="row g-3">
+                        <!-- First Name -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">First Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter first name">
+                        </div>
+                        <!-- Last Name -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Last Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter last name">
+                        </div>
+                        <!-- Email Address -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter email">
+                        </div>
+                        <!-- Phone Number -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter phone number">
+                        </div>
+                        <!-- Alternative Phone Number -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Alternative Phone Number</label>
+                            <input type="text" class="form-control" placeholder="Enter alternative phone">
+                        </div>
+                        <!-- Landline Number -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Landline Number</label>
+                            <input type="text" class="form-control" placeholder="Enter landline number">
+                        </div>
+                        <!-- Relationship -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Relationship <span class="text-danger">*</span></label>
+                            <select class="form-select">
+                                <option selected>Select</option>
+                                <option>Parent</option>
+                                <option>Sibling</option>
+                                <option>Spouse</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <!-- Address -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold">Address <span class="text-danger">*</span></label>
+                            <textarea class="form-control" rows="3" placeholder="Enter address"></textarea>
+                        </div>
+                    </div>
+                    <!-- Save Button -->
+                    <div class="mt-3">
+                        <button class="btn btn-primary w-100">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Preference Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondaryTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondaryTwo" aria-expanded="false" aria-controls="other_collapseSecondaryTwo">
+            Contact Preference
+            </button>
+        </h2>
+        <div id="other_collapseSecondaryTwo" class="accordion-collapse collapse show" aria-labelledby="other_headingSecondaryTwo" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Contact Preference -->
+                <div class="card p-4 shadow-sm border-0">
+                    <!-- Contact Preference Section -->
+                    <h4 class="fw-bold text-dark mb-3">CONTACT PREFERENCE</h4>
+                    <div class="row g-3">
+                        <!-- Best Contact Option -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold text-dark">Best Contact Option</label>
+                            <div class="d-flex flex-column">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="contactPhone" checked>
+                                    <label class="form-check-label fw-semibold" for="contactPhone">Phone</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="contactWhatsApp">
+                                    <label class="form-check-label fw-semibold" for="contactWhatsApp">WhatsApp</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="contactSMS">
+                                    <label class="form-check-label fw-semibold" for="contactSMS">SMS</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Time to Call -->
+                        <div class="col-md-6">
+                            <label class="fw-semibold text-dark">Time to Call</label>
+                            <input type="text" class="form-control border-dark" placeholder="Enter preferred time">
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Notification Preference -->
+                    <h4 class="fw-bold text-dark mb-3">NOTIFICATION PREFERENCE</h4>
+                    <div class="d-flex flex-column">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyEmail" checked>
+                            <label class="form-check-label fw-semibold" for="notifyEmail">Email</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyMobile">
+                            <label class="form-check-label fw-semibold" for="notifyMobile">Mobile Notification</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyBoth">
+                            <label class="form-check-label fw-semibold" for="notifyBoth">Both</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyNone">
+                            <label class="form-check-label fw-semibold" for="notifyNone">None of the Above</label>
+                        </div>
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="d-flex gap-2 flex-wrap mt-2">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-warning">Not Audited: Click to mark as audited</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Employment Status Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondaryThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondaryThree" aria-expanded="false" aria-controls="other_collapseSecondaryThree">
+            Employment Status
+            </button>
+        </h2>
+        <div id="other_collapseSecondaryThree" class="accordion-collapse collapse show" aria-labelledby="other_headingSecondaryThree" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Employment Status -->
+                <div class="card p-4 shadow-sm">
+                    <h5 class="fw-bold">EMPLOYMENT STATUS</h5>
+                    <!-- Employment Status Options -->
+                    <div class="mb-3">
+                        <label class="fw-semibold">Select candidate's employment status:</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="employmentStatus" id="payee" checked onclick="toggleDivs('div1')">
+                                <label class="form-check-label" for="payee">PAYE</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="employmentStatus" id="limitedCompany" onclick="toggleDivs('div2')">
+                                <label class="form-check-label" for="limitedCompany">Limited Company</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="employmentStatus" id="selfEmployed" onclick="toggleDivs('div3')">
+                                <label class="form-check-label" for="selfEmployed">Self Employed [Sole Trader]</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="employmentStatus" id="umbrellaCompany" onclick="toggleDivs('div4')">
+                                <label class="form-check-label" for="umbrellaCompany">Umbrella Company</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div1" class="content">
+                        <!-- PAYE Tax Code & National Insurance -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="fw-semibold">PAYE Tax Code</label>
+                                <input type="text" class="form-control" placeholder="Enter Tax Code">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="fw-semibold">National Insurance No</label>
+                                <input type="text" class="form-control" placeholder="Enter NI Number">
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- P45 Question -->
+                        <div class="mb-3">
+                            <label class="fw-semibold">Do you have a P45 from a previous employer within the current tax year?</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="p45" id="p45Yes">
+                                    <label class="form-check-label" for="p45Yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="p45" id="p45No" checked>
+                                    <label class="form-check-label" for="p45No">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tax Year Information -->
+                        <div class="alert alert-info p-2">
+                            <small><strong>Tax year runs from April 6 to April 5 the following year.</strong></small>
+                        </div>
+                        <hr>
+                        <!-- Statement Selection -->
+                        <h6 class="fw-bold">Choose the statement that applies to you</h6>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="statementA">
+                            <label class="form-check-label" for="statementA">
+                            <strong>A.</strong> Do not choose this if you receive a State, Works, or Private Pension. Select this if this is your first job since April 6 and you haven't received payments from Jobseeker’s Allowance, Employment and Support Allowance, or Incapacity Benefit.
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mt-2">
+                            <input class="form-check-input" type="checkbox" id="statementB">
+                            <label class="form-check-label" for="statementB">
+                            <strong>B.</strong> Do not choose this if you receive a State, Works, or Private Pension. Select this if since April 6, you've had another job but do not have a P45 and have received payments from Jobseeker’s Allowance or similar benefits.
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mt-2">
+                            <input class="form-check-input" type="checkbox" id="statementC">
+                            <label class="form-check-label" for="statementC">
+                            <strong>C.</strong> If neither A nor B applies to you, select this option.
+                            </label>
+                        </div>
+                        <hr>
+                        <h5 class="fw-bold">Student Loan</h5>
+                        <p class="small text-muted">You’ll have a <strong>Plan 1 Student Loan</strong> if:</p>
+                        <ul class="small">
+                            <li>You lived in Scotland or Northern Ireland when you started your course (undergraduate or postgraduate)</li>
+                            <li>You lived in England or Wales and started your undergraduate course before 1 September 2012</li>
+                        </ul>
+                        <p class="small text-muted">You’ll have a <strong>Plan 2 Student Loan</strong> if:</p>
+                        <ul class="small">
+                            <li>You lived in England or Wales and started your undergraduate course on or after 1 September 2012</li>
+                            <li>Your loan is a Part-Time Maintenance Loan</li>
+                            <li>Your loan is an Advanced Learner Loan</li>
+                            <li>Your loan is a Postgraduate Healthcare Loan</li>
+                        </ul>
+                        <div class="mb-3">
+                            <label class="fw-semibold">Do you have one of the Student Loans? <span class="text-danger">*</span></label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="studentLoan" id="studentLoanYes">
+                                    <label class="form-check-label" for="studentLoanYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="studentLoan" id="studentLoanNo" checked>
+                                    <label class="form-check-label" for="studentLoanNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="fw-bold">Postgraduate Loan</h5>
+                        <p class="small text-muted">You’ll have a Postgraduate Loan if:</p>
+                        <ul class="small">
+                            <li>You lived in England and started your Postgraduate Master’s course on or after 1 August 2016</li>
+                            <li>You lived in Wales and started your Postgraduate Master’s course on or after 1 August 2017</li>
+                            <li>You lived in England or Wales and started your Postgraduate Doctoral course on or after 1 August 2018</li>
+                        </ul>
+                        <div class="mb-3">
+                            <label class="fw-semibold">Do you have a Postgraduate Loan which is not fully repaid? <span class="text-danger">*</span></label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="postgradLoan" id="postgradLoanYes">
+                                    <label class="form-check-label" for="postgradLoanYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="postgradLoan" id="postgradLoanNo" checked>
+                                    <label class="form-check-label" for="postgradLoanNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div2" class="content" style="display: none;">
+                        <div class="card p-4 shadow-sm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="fw-semibold">Company Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Company Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="fw-semibold">Company Number <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Company Number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="fw-semibold">National Insurance No</label>
+                                    <input type="text" class="form-control" placeholder="Enter NI Number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="fw-semibold">UTR <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter UTR">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div3" class="content" style="display: none;">
+                        <div class="card p-4 shadow-sm border rounded">
+                            <div class="row g-3">
+                                <!-- National Insurance No -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">National Insurance No</label>
+                                    <input type="text" class="form-control styled-input" placeholder="Enter NI Number">
+                                </div>
+                                <!-- UTR -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">UTR <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control styled-input" placeholder="Enter UTR">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div4" class="content" style="display: none;">
+                        <div class="card p-4 shadow-sm border rounded">
+                            <div class="row g-3">
+                                <!-- Umbrella Company Name -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">Umbrella Company Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control styled-input" placeholder="Enter Company Name">
+                                </div>
+                                <!-- Umbrella Company Phone -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">Umbrella Company Phone <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control styled-input" placeholder="Enter Phone Number">
+                                </div>
+                                <!-- Umbrella Company Email -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">Umbrella Company Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control styled-input" placeholder="Enter Email">
+                                </div>
+                                <!-- National Insurance No -->
+                                <div class="col-12 col-md-6">
+                                    <label class="fw-semibold">National Insurance No</label>
+                                    <input type="text" class="form-control styled-input" placeholder="Enter NI Number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Buttons -->
+                <div class="d-flex gap-2 flex-wrap mt-2">
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-warning">Not Audited: Click to mark as audited</button>
+                </div>
+            </div>
+            <div class="card p-4 shadow-sm mt-4">
+                <h5 class="fw-bold">REQUIRED DOCUMENTS</h5>
+                <p class="small text-muted">
+                    These are extra documents (that may not be included in any of the above sections). You can customize this from 
+                    <strong>Settings > Staff Settings > Define Required Documents</strong>.
+                </p>
+                <p>Please click the following button to select a file from your device.</p>
+                <div class="border p-3 rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <label class="fw-semibold mb-2">Proof of NI</label>
+                    <label for="fileUpload" class="upload-box d-flex flex-column align-items-center p-3 border rounded" style="cursor: pointer;">
+                    <i class="bi bi-cloud-upload h4 text-muted"></i>
+                    <span class="text-muted small">Click to upload</span>
+                    </label>
+                    <input type="file" id="fileUpload" class="d-none">
+                    <button type="button" class="btn btn-primary mt-3">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Equal Opportunity Declaration Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondaryFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondaryFour" aria-expanded="false" aria-controls="other_collapseSecondaryFour">
+            Equal Opportunity Declaration
+            </button>
+        </h2>
+        <div id="other_collapseSecondaryFour" class="accordion-collapse collapse" aria-labelledby="other_headingSecondaryFour" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Equal Opportunity Declaration -->
+                <div class="card p-4 shadow-sm border rounded">
+                    <h4 class="fw-bold text-primary">EQUAL OPPORTUNITY DECLARATION</h4>
+                    <p class="fw-semibold text-muted">[Equal Opportunity Policy displayed for the candidate while registering]</p>
+                    <p class="text-secondary">
+                        All information given will be treated in the strictest confidence and not used for any other purpose. 
+                        We are an equal opportunity employer. The aim of our policy is to ensure no job applicant or employee 
+                        receives less favourable treatment on the grounds of gender, age, disability / handicap, marital status, 
+                        sexual orientation, creed, colour, race or ethnic origins, or is disadvantaged by conditions or 
+                        requirements which cannot be shown as justifiable.
+                    </p>
+                    <p class="text-secondary">
+                        Selection criteria and procedures are frequently reviewed to ensure that individuals are selected, 
+                        promoted and treated on the basis of their relevant merits and abilities.
+                    </p>
+                    <p class="text-secondary">
+                        All employees are given equal opportunity and encouraged to progress within the organisation.
+                    </p>
+                    <p class="text-secondary">
+                        We are committed to an ongoing programme of action to make this policy fully effective. 
+                        To ensure that this policy is fully and fairly implemented and monitored, and for no other reason, 
+                        would you please select the relevant options below?
+                    </p>
+                    <div class="form-check form-switch my-3">
+                        <input class="form-check-input custom-switch" type="checkbox" id="toggleDisclosure">
+                        <label class="form-check-label fw-semibold text-secondary" for="toggleDisclosure">
+                        I do not wish to disclose this.
+                        </label>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary">Save</button>
+                        <button class="btn btn-warning">Not Audited : Click to mark as audited</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Additional Training Details Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondaryFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondaryFive" aria-expanded="false" aria-controls="other_collapseSecondaryFive">
+            Additional Training Details
+            </button>
+        </h2>
+        <div id="other_collapseSecondaryFive" class="accordion-collapse collapse" aria-labelledby="other_headingSecondaryFive" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Additional Training Details -->
+                <div class="card p-4 shadow-sm border rounded">
+                    <h4 class="fw-bold text-primary">ADDITIONAL TRAINING DETAILS</h4>
+                    <p class="fw-semibold text-muted">Upload Certificates</p>
+                    <p class="text-secondary">Please upload in any of the following formats - JPG, PNG or PDF.</p>
+                    <!-- Training Name -->
+                    <div class="mb-3">
+                        <label for="trainingName" class="form-label fw-semibold">Training Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="trainingName" placeholder="Enter training name">
+                    </div>
+                    <!-- File Upload -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Upload Certificate</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control custom-file-input" id="certificateUpload">
+                        </div>
+                    </div>
+                    <!-- Issue & Expiry Dates -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="issueDate" class="form-label fw-semibold">Issue Date :</label>
+                            <input type="date" class="form-control" id="issueDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="expiryDate" class="form-label fw-semibold">Expiry Date :</label>
+                            <input type="date" class="form-control" id="expiryDate">
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-primary px-4">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Education & Additional Docs Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondarySix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondarySix" aria-expanded="false" aria-controls="other_collapseSecondarySix">
+            Education & Additional Docs
+            </button>
+        </h2>
+        <div id="other_collapseSecondarySix" class="accordion-collapse collapse" aria-labelledby="other_headingSecondarySix" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Education & Additional Docs -->
+                <div class="card p-4 shadow-sm border rounded">
+                    <h4 class="fw-bold text-primary">EDUCATIONAL QUALIFICATIONS</h4>
+                    <!-- Name of Institution -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Name of Institution <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter institution name">
+                    </div>
+                    <!-- Qualification -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Qualification <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter qualification">
+                    </div>
+                    <!-- From - To Date Fields -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">From <span class="text-danger">*</span></label>
+                            <input type="month" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">To <span class="text-danger">*</span></label>
+                            <input type="month" class="form-control">
+                        </div>
+                    </div>
+                    <!-- Remarks -->
+                    <div class="mb-3 mt-3">
+                        <label class="form-label fw-semibold">Remarks</label>
+                        <textarea class="form-control" rows="3" placeholder="Please type additional information in no more than 50 words."></textarea>
+                    </div>
+                    <!-- File Upload -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Upload Certificate</label>
+                        <p class="text-secondary small">Please upload in any of the following formats - JPG, PNG, or PDF.</p>
+                        <input type="file" class="form-control custom-file-input">
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary px-4">Save</button>
+                    </div>
+                </div>
+                <!-- Additional Documents Section -->
+                <div class="card p-4 shadow-sm border rounded mt-4">
+                    <h4 class="fw-bold text-primary">ADDITIONAL DOCUMENTS FROM THE CANDIDATE</h4>
+                    <p class="text-secondary small">
+                        If the candidate has any other relevant documents to upload (Not part of the above sections), they are asked to upload them here.
+                    </p>
+                    <p class="text-secondary small">Please upload in any of the following formats - JPG, PNG, or PDF.</p>
+                    <!-- Document Name -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Document Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter document name">
+                    </div>
+                    <!-- File Upload -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Upload File</label>
+                        <input type="file" class="form-control custom-file-input">
+                    </div>
+                    <!-- Save Button -->
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary px-4">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bank Details Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="other_headingSecondarySeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#other_collapseSecondarySeven" aria-expanded="false" aria-controls="other_collapseSecondarySeven">
+            Bank Details
+            </button>
+        </h2>
+        <div id="other_collapseSecondarySeven" class="accordion-collapse collapse" aria-labelledby="other_headingSecondarySeven" data-bs-parent="#accordionOtherExample">
+            <div class="accordion-body">
+                <!-- Content for Bank Details -->
+                <div class="card p-4 shadow-sm border rounded">
+                    <h4 class="fw-bold text-primary">BANK ACCOUNT DETAILS</h4>
+                    <div class="row">
+                        <!-- Account Number -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Account Number <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter account number">
+                        </div>
+                        <!-- Sort Code -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Sort Code <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter sort code">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Bank Name -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Name of the Bank</label>
+                            <input type="text" class="form-control" placeholder="Enter bank name">
+                        </div>
+                        <!-- Account Name -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Account Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter account name">
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary px-4">Save Bank Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
